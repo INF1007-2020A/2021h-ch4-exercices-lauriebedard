@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-print("salut")
-
-
 def is_even_len(string: str) -> bool:
     if len(string) % 2:
         return True
