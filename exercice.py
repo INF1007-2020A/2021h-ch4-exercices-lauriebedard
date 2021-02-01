@@ -1,25 +1,38 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+print("salut")
 
 
 def is_even_len(string: str) -> bool:
-    pass
+    if len(string) % 2:
+        return True
 
 
 def remove_third_char(string: str) -> str:
-    pass
+    string = string[0:2] + string[3:]
+    return string
 
 
 def replace_char(string: str, old_char: str, new_char: str) -> str:
-    pass
+    index = string.index(old_char)
+    string = string[0:index] + new_char + string[index + 1:]
+    return string
 
 
 def get_number_of_char(string: str, char: str) -> int:
-    pass
+    nb_occurences = 0
+    for charactere in string:
+        if charactere == char:
+            nb_occurences += 1
+    return nb_occurences
 
 
 def get_number_of_words(sentence: str, word: str) -> int:
-    pass
+    nb_mots = 1
+    for charactere in sentence:
+        if charactere == " ":
+            nb_mots += 1
+    return nb_mots
 
 
 def main() -> None:
@@ -33,10 +46,11 @@ def main() -> None:
     print(f"On supprime le 3e caratère dans la chaine: {chaine}. Résultat : {remove_third_char(chaine)}")
 
     chaine = "hello world!"
-    print(f"On remplace le caratère w par le caractère z dans la chaine: {chaine}. Résultat : {replace_char(chaine, 'w', 'z')}")
+    print(
+        f"On remplace le caratère w par le caractère z dans la chaine: {chaine}. Résultat : {replace_char(chaine, 'w', 'z')}")
 
     print(f"Le nombre d'occurrence de l dans hello est : {get_number_of_char(chaine, 'l')}")
-    
+
     chaine = "Baby shark doo doo doo doo doo doo"
     print(f"L'occurence du mot doo dans la chaine {chaine} est: {get_number_of_words(chaine, 'doo')}")
 
