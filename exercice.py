@@ -1,18 +1,23 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 def is_even_len(string: str) -> bool:
-    if len(string) % 2:
+    if len(string) % 2 == 0:
         return True
+
+    return False
 
 
 def remove_third_char(string: str) -> str:
-    string = string[0:2] + string[3:]
+    string = string[:2] + string[3:]
+
     return string
 
 
 def replace_char(string: str, old_char: str, new_char: str) -> str:
-    index = string.index(old_char)
-    string = string[0:index] + new_char + string[index + 1:]
+    for i in range(len(string)):
+        if string[i] == old_char:
+            string = string[0:i] + new_char + string[i + 1:]
+
     return string
 
 
@@ -21,6 +26,7 @@ def get_number_of_char(string: str, char: str) -> int:
     for charactere in string:
         if charactere == char:
             nb_occurences += 1
+
     return nb_occurences
 
 
@@ -29,6 +35,7 @@ def get_number_of_words(sentence: str, word: str) -> int:
     for charactere in sentence:
         if charactere == " ":
             nb_mots += 1
+
     return nb_mots
 
 
