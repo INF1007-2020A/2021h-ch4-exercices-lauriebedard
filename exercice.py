@@ -31,10 +31,7 @@ def get_number_of_char(string: str, char: str) -> int:
 
 
 def get_number_of_words(sentence: str, word: str) -> int:
-    nb_mots = 1
-    for charactere in sentence:
-        if charactere == " ":
-            nb_mots += 1
+    nb_mots = sentence.count(word)
 
     return nb_mots
 
